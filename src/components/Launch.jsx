@@ -11,6 +11,8 @@ class Launch extends Component {
         <h2> { launch.mission_name } </h2>
         <div> Flight Number: { launch.flight_number } </div>
         <div> Rocket ID: { launch.rocket.rocket_id } </div>
+        <div> Cost per Launch: { launch.cost } </div>
+        <div> Description: { launch.details } </div>
       </li>
     );
   }
