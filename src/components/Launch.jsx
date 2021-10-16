@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 class Launch extends Component {
 
+  // test
+  showMessage() {
+    alert('Hello!');
+  }
+
   render() {
 
     let launch = this.props.launch;
@@ -13,6 +18,7 @@ class Launch extends Component {
         <div> Rocket ID: { launch.rocket.rocket_id } </div>
         <div> Cost per Launch: { launch.cost } </div>
         <div> Description: { launch.details } </div>
+        <button onClick={this.showMessage}>Button</button>
       </li>
     );
   }
