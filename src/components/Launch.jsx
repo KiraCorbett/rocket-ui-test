@@ -10,6 +10,7 @@ class Launch extends Component {
       <li>
         <h2> { launch.mission_name } </h2>
         <div> Flight Number: { launch.flight_number } </div>
+        <div> Rocket ID: { launch.rocket.rocket_id } </div>
       </li>
     );
   }
