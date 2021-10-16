@@ -1,17 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class Launch extends Component {
+
+  constructor(props) {
+    super(); 
+    this.state = { showDetails: false };
+  }
+
+  showDetails = (bool) => {
+    this.setState({
+      showDetails: !bool
+    });
+  }
+
   render() {
 
     let launch = this.props.launch;
+    const showDetails = this.state.showDetails;
 
     return (
       <li>
-        <button><h2> { launch.mission_name } </h2></button>
-        <div> Flight Number: { launch.flight_number } </div>
-        <div> Rocket ID: { launch.rocket.rocket_id } </div>
-        <div> Cost per Launch: { launch.cost } </div>
-        <div> Description: { launch.details } </div>
+        <button onClick={this.showDetails.bind(null, showDetails)}><h2> { launch.mission_name } </h2></button>
+        { this.state.showDetails && (
+          <ul>
+            <div>Rocket ID: { launch.rocket.rocket_id } </div>
+            <div>Cost: { launch.cost } </div>
+            <div>Details: { launch.details } </div>
+          </ul>
+        ) }
       </li>
     );
   }
